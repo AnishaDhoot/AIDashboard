@@ -2,6 +2,7 @@
 import Image from "next/image";
 import clsx from "clsx";
 
+
 export function AvatarCard(props: {
   name: string;
   role: string;
@@ -28,7 +29,6 @@ export function AvatarCard(props: {
   ];
 
   const vibeLower = props.vibe.toLowerCase();
-  const underlineColor = vibeColors[vibeLower] || vibeColors.default;
 
   return (
 <div className="relative w-[330px] rounded-3xl overflow-hidden backdrop-blur-lg bg-white/10 border border-white/20 shadow-lg p-6 text-white  hover:scale-102 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all duration-120 ">
@@ -92,7 +92,7 @@ export function AvatarCard(props: {
       <button
   className="ml-[35%] mt-4 bg-white/20 text-white px-8 py-1 rounded-full text-sm font-semibold backdrop-blur-sm border border-white/30 hover:bg-white/30 hover:scale-105 transition-all"
 >
-  Edit
+  Edit 
 </button>
 
     </div>

@@ -4,8 +4,18 @@ import AddAvatarModal from "@/components/addAvatar";
 import { AvatarCard } from "@/components/avatarcard";
 import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
+interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  image: string;
+  company?: {
+    title: string;
+  };
+}
+
 export default function Home() {
-  const [users, setUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {
     async function fetchUsers() {
@@ -29,7 +39,7 @@ export default function Home() {
 
       <div className="flex flex-col lg:flex-row items-center lg:justify-between px-4 -mt-15 ml-5">
         <h1 className="text-[#F5F5F5] text-3xl font-serif italic font-light text-center mb-4 lg:mb-0 lg:flex-grow">
-          Hope you're having a wonderful day!
+          Hope you&apos;re having a wonderful day!
         </h1>
         <div className="lg:ml-16">
           <AddAvatarModal />
@@ -41,7 +51,7 @@ export default function Home() {
           <AvatarCard
             key={user.id}
             name={`${user.firstName} ${user.lastName}`}
-            role={user.company?.title}
+            role={user.company?.title || "No role specified"} 
             imageUrl={user.image}
             strengths={sampleStrengths[index % sampleStrengths.length]}
             hobbies={sampleHobbies[index % sampleHobbies.length]}
