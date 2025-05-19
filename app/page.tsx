@@ -32,7 +32,7 @@ export default function Home() {
   const sampleVibes = ["Energetic", "Creative", "Calm", "Bold", "Creative", "Calm"];
 
   return (
-    <div className="h-full bg-[#1a1a1c] flex flex-col items-center">
+    <div className="min-h-screen bg-[#1a1a1c] flex flex-col items-center">
       <div className="h-[20rem] items-center">
         <TextHoverEffect text="WELCOME" />
       </div>
